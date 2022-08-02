@@ -11,6 +11,19 @@
 <body>
     <div id="bookcontainer">
         <button id="newBook">New Book</button>
+        <div id = "newBookForm" style="display: none ;">
+            <form>
+                <label for="Title">Title: </label>
+                <input type="text" id="title" name="title">
+                <label for="Author">Author: </label>
+                <input type="text" id="author" name="author">
+                <label for="Pages">Pages: </label>
+                <input type="text" id="pages" name="pages">
+                <label for="read">Read: </label>
+                <input type="text" id="read" name="read">
+            </form>
+            <button id="createBook">Add Book</button>
+        </div>
         <table>
             <tr>
                 <td>ID</td>
@@ -19,6 +32,7 @@
                 <td>Pages</td>
                 <td>Read</td>
                 <td>Remove</td>
+                <td>Status</td>
             </tr>
         </table>
         <p></p>
