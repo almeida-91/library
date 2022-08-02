@@ -16,6 +16,7 @@ function book(title,author, pages, read){
     this.toggle = function(){
         if (this.read==`Yes`) this.read = 'No';
         else this.read = 'Yes';
+        refreshLibrary();
     }
 }
 
@@ -50,12 +51,18 @@ function refreshLibrary(){
                 let delBook = document.createElement('button');
                 delBook.className = `delButton`;
                 delBook.textContent = `Delete`;
-                cell.appendChild(delBook);  
+                delBook.setAttribute('name',i);
+                cell.appendChild(delBook);
+                delBook.onclick = function (){deleteBook(Number(delBook.getAttribute('name')))};
             }
             else if (j==6) {
                 let change = document.createElement('button');
                 change.className = 'statusButton';
                 change.textContent = 'Change';
+                change.setAttribute('name',i);
+                change.onclick = function(){
+                    myLibrary[Number(change.getAttribute('name'))].toggle();
+                }
                 cell.appendChild(change);  
             }
             row.appendChild(cell);
@@ -63,8 +70,6 @@ function refreshLibrary(){
         id++;
         booklist.appendChild(row);
     }
-    updateDeleteButtons();
-    updateChangeButtons();
 }
 
 const newBookForm = document.getElementById(`newBookForm`);
@@ -78,27 +83,6 @@ newBook.addEventListener(`click`, ()=>{
 addBook.addEventListener('click', function(){
     addBookToLibrary(input[0].value,input[1].value,input[2].value,input[3].value);
 });
-
-function updateDeleteButtons(){
-    const deleteButtonList = document.getElementsByClassName('delButton');
-    if ( delButtonList.length == 0 ) return;
-    else {
-        for(i=0;i<delButtonList.length;i++){
-            delButtonList[i].addEventListener('click', function(i){
-                deleteBook(i);                
-            }.bind(null,i));
-        }
-    };
-    console.log(deleteButtonList);
-    
-}
-/*     for ( i = 0 ; i < delButtonList.length ; i++){
-        let index = 0;
-        deleteButtonList[i].onclick = deleteBook(index);
-        index++
-        }
-} */
-
 
 function deleteBook(id){
     myLibrary.splice(id, 1);

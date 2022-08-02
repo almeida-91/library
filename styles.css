@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+
+h1 {
+    font-size: 64px;
+    text-decoration: underline;
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    flex-direction: column;
 }
 
 table {
@@ -18,19 +30,45 @@ tr {
 td {
     width: auto;
     height: 10px;
-    padding: 10px;
-    border: 1px solid black;
+    padding: 20px;
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
 }
 
 tbody {
     background-color: gray;
 }
 
-form {
-    display: grid;
-    grid-template-columns: 1fr, 4fr;
-    grid-template-rows: repeat(4,1fr);
+label {
+    font-weight: 700;
+}
+
+table {
+    border-radius: 10px;
+}
+
+input,
+button{
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(121, 121, 121);
+    padding: 5px;
+    color: white;
+
+}
+
+button{
+    padding: 10px 20px ;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgb(182, 182, 182);
+}
+
+div{
+    margin: 10px;
 }
