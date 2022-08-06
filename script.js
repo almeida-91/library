@@ -33,7 +33,7 @@ function addBookToLibrary(title,author,pages,read) {
 
 addBookToLibrary('The Hobbit','JRR Tolkien',295,'No');
 addBookToLibrary('HP','rowling',295,'Yes');
-addBookToLibrary(`Troglo's thesis`,`Troglo Pedreira`,`Over 9000`,'IEC OFC');
+addBookToLibrary(`Troglo's thesis`,`Troglo Pedreira`,`9000`,'Yes');
 
 function refreshLibrary(){
     booklist.innerHTML = "";

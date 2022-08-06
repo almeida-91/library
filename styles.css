@@ -72,3 +72,7 @@ button:hover {
 div{
     margin: 10px;
 }
+
+#bookcontainer {
+    width: 100%;
+}
