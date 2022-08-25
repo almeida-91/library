@@ -18,6 +18,7 @@ constructor (title,author, pages, read){
     this.refreshLibrary();
     }
 
+
     toggle(){
         if (this.read==`Yes`) this.read = 'No';
         else this.read = 'Yes';
